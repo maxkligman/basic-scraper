@@ -8,6 +8,7 @@ var db = require("./models");
 
 var PORT = 3000;
 
+
 var app = express();
 
 
@@ -17,7 +18,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/nprScraper", { useNewUrlParser: true });
-
+process.env.NODE_ENV = 'production';
 
 
 // scraping route
